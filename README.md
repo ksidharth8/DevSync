@@ -1,79 +1,151 @@
-# DevSync: AI-Powered Real-Time Coding Collaboration Platform
+# DevSync
 
-DevSync is an all-in-one, real-time collaborative coding platform designed to supercharge developer teamwork. Whether you're debugging together, doing a peer review, or building a hackathon project, DevSync offers a seamless and intelligent coding experience — all in one place.
+A real-time collaborative code editor with authentication and AI-powered code assistance.
 
-## Key Features
+![Landing Page - Light Theme](images/LandingPage_LightTheme.png)
+![Landing Page - Dark Theme](images/LandingPage_DarkTheme.png)
 
-- 🖊 **Real-Time Code Editing & Chat**
-  - Built using Node.js and Socket.io
-  - Multiple users can edit code simultaneously
-  - Integrated chat for smooth communication
+## Features
 
-- 💬 **Interactive Coding Workspace**
-  - Sleek React-based UI
-  - Intuitive, responsive editor
-  - Syntax highlighting and file management
-  - Dark mode support
+- Real-time collaborative code editing
+- User authentication (Email/Password & Google OAuth)
+- AI-powered code suggestions and completions
+- Syntax highlighting
+- Multiple language support
+- Dark/Light theme support
 
-- 🤖 **AI-Powered Code Assistance**
-  - Integrated with OpenAI Codex
-  - Intelligent code suggestions
-  - Auto-completions and debugging tips
+### Authentication
+![Sign In Page](images/SignInPage.png)
+![Sign Up Page](images/SignUpPage.png)
 
-- 🔗 **Pair Programming Matchmaking**
-  - ML-based developer matching
-  - Skill and interest-based pairing
-  - Perfect for learning and mentoring
+### Code Editor
+![Code Editor](images/CodingNotepad.png)
 
 ## Tech Stack
 
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Real-Time Engine**: Socket.io
-- **AI Integration**: OpenAI Codex
-- **Matchmaking**: Python + scikit-learn
+### Frontend
+- React.js
+- Tailwind CSS
+- Socket.io-client
+- Axios
+- React Router
+- Context API for state management
 
-## Getting Started
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Socket.io
+- Passport.js (Authentication)
+- JWT (JSON Web Tokens)
 
-### Prerequisites
+## Prerequisites
 
-- Node.js (v16 or higher)
-- Python 3.8+ (for matchmaking service)
-- npm or yarn
+- Node.js (v14 or higher)
+- MongoDB
+- Google OAuth credentials (for Google Sign-In)
+- OpenAI API key (for AI code assistance)
 
-### Installation
+## Installation
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   # Install backend dependencies
-   cd backend
-   npm install
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/devsync.git
+cd devsync
+```
 
-   # Install frontend dependencies
-   cd ../frontend
-   npm install
-   ```
+2. Install backend dependencies:
+```bash
+cd backend
+npm install
+```
 
-3. Set up environment variables:
-   - Create `.env` files in both frontend and backend directories
-   - Add necessary API keys and configuration
+3. Install frontend dependencies:
+```bash
+cd ../frontend
+npm install
+```
 
-4. Start the development servers:
-   ```bash
-   # Start backend
-   cd backend
-   npm run dev
+4. Set up environment variables:
 
-   # Start frontend
-   cd frontend
-   npm start
-   ```
+Backend (.env):
+```env
+PORT=5001
+MONGODB_URI=mongodb://localhost:27017/devsync
+JWT_SECRET=your_jwt_secret_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+FRONTEND_URL=http://localhost:3000
+SERVER_URL=http://localhost:5001
+```
+
+Frontend (.env):
+```env
+REACT_APP_SERVER_URL=http://localhost:5001
+REACT_APP_OPENAI_API_KEY=your_openai_api_key_here
+```
+
+## Running the Application
+
+1. Start the backend server:
+```bash
+cd backend
+npm start
+```
+
+2. Start the frontend development server:
+```bash
+cd frontend
+npm start
+```
+
+3. Open your browser and navigate to `http://localhost:3000`
+
+## Project Structure
+
+```
+devsync/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── server.js
+│   ├── package.json
+│   └── .env
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   └── App.js
+│   ├── package.json
+│   └── .env
+├── images/
+│   ├── LandingPage_LightTheme.png
+│   ├── LandingPage_DarkTheme.png
+│   ├── SignInPage.png
+│   ├── SignUpPage.png
+│   └── CodingNotepad.png
+├── .gitignore
+└── README.md
+```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- OpenAI for providing the API for code suggestions
+- Socket.io for real-time collaboration
+- MongoDB for database support
+- All contributors and users of the project 
